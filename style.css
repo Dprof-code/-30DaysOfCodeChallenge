@@ -1,0 +1,236 @@
+:root {
+    --mainFont: 'Ubuntu', sans-serif;
+    --white: #ffffff;
+    --primary: #a66cff;
+    --secondary: #9c9efe;
+    --lightPurple: #afb4ff;
+    --lightBlue: #b1e1ff;
+    --grey: #757575;
+    --dark: #212121;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to left, var(--lightPurple) 0%, var(--secondary) 100%);
+    background-size: cover;
+    font-family: var(--mainFont);
+}
+
+header {
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#header-title {
+    padding-top: 2rem;
+    font-weight: 700;
+    font-size: 3rem;
+    animation: headerAnime 4s ease-in infinite;
+    animation-direction: alternate;
+}
+
+@keyframes headerAnime {
+    0%{transform: rotateZ(-15deg);}
+    25%{transform: rotateZ(0deg);}
+    50%{transform: rotateZ(15deg);}
+    100%{transform: rotateZ(0deg);}
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    padding: 3rem;
+
+    box-sizing: border-box;
+}
+
+.task-box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    gap: 3rem;
+}
+
+.task-box {
+    flex: 0 0 calc(30% - 1rem);
+    padding: 5rem;
+    border: 1px solid var(--lightBlue);
+    background-color: var(--primary);
+    color: var(--white);
+    overflow: hidden;
+    border-radius: 8px;
+
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.task-box:nth-of-type(even) {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+.task-box:hover {
+    box-shadow: 5px 10px 20px 5px var(--grey);
+    transform: scale(1.2);
+}
+
+#task {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    top: 12rem;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    display: none;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+input {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+a {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    color: var(--white);
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+#task-container {
+    width: 50%;
+    height: 50%;
+    background-color: var(--white);
+    transform: translate(50%, 50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+/** Even/Odd Number Checker Start **/
+
+#even-odd-checker {
+    text-align: center;
+    display: none;
+
+}
+
+#number-input {
+    padding: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+}
+
+/** Even/Odd Number Checker End **/
+
+/** Prime Checker Start **/
+
+#prime-number-checker {
+    text-align: center;
+    display: none;
+}
+
+/** Prime Number Checker End **/
+
+/** Palindrome Checker Start **/
+
+#palindrome-checker {
+    display: none;
+}
+
+/** Palindrome Checker End **/
+
+/** Vowel/Consonant count Start **/
+
+#vowel-consonant-count-checker {
+    text-align: center;
+    display: none;
+
+}
+
+#word-input {
+    padding: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+}
+
+/** Vowel/Consonant count End **/
+
+/** Quadratic Calculator Start **/
+
+#quadratic-calc {
+    display: none;
+}
+
+
+#quadratic-calc-input {
+    padding: 2.5rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+}
+
+/** Quadratic Calculator End **/
+
+/** Background Color Changer Start **/
+
+#background-color-changer {
+    display: none;
+}
+
+/** Background Color Changer End **/
+
+/** Media Queries **/
+
+
+@media (max-width:720px) {
+    .task-box-container {
+        width: 100%;
+        align-items: center;
+        position: absolute;
+        top: 5rem;
+    }
+    .task-box {
+        flex: 0 0 calc(90% - 1rem);
+    }
+    #task {
+        width: 100%;
+        height: 90%;
+        top: 5rem;
+
+        
+    }
+    
+
+    #task-container {
+        width: 100%;
+        transform: translate(0%, 0%);
+    }
+}
